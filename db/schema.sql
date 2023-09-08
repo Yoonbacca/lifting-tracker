@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS lifting_db;
+
+CREATE DATABASE lifting_db;
