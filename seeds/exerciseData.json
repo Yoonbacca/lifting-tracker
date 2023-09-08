@@ -1,0 +1,93 @@
+[
+    {
+        "exercise_name": "Flat Dumbbell Bench Press",
+        "assigned_day": "1",
+        "rep_count": "10",
+        "set_count": "5",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Weighted Push Ups",
+        "assigned_day": "1",
+        "rep_count": "12",
+        "set_count": "4",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Dips",
+        "assigned_day": "1",
+        "rep_count": "10",
+        "set_count": "4",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Close Grip Bench Press",
+        "assigned_day": "1",
+        "rep_count": "15",
+        "set_count": "3",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Overhead Tricep Extension",
+        "assigned_day": "1",
+        "rep_count": "15",
+        "set_count": "3",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Low Handle Trap Bar Deadlift",
+        "assigned_day": "2",
+        "rep_count": "10",
+        "set_count": "5",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Cleans",
+        "assigned_day": "2",
+        "rep_count": "6",
+        "set_count": "4",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Single Arm Row",
+        "assigned_day": "1",
+        "rep_count": "10",
+        "set_count": "4",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Incline Bicep Curls",
+        "assigned_day": "1",
+        "rep_count": "12",
+        "set_count": "3",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Squat",
+        "assigned_day": "1",
+        "rep_count": "5",
+        "set_count": "3",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Front Squat",
+        "assigned_day": "1",
+        "rep_count": "5",
+        "set_count": "3",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Bulgarian Split Squat",
+        "assigned_day": "1",
+        "rep_count": "8",
+        "set_count": "3",
+        "workout_id": "1"
+    },
+    {
+        "exercise_name": "Leg Extension",
+        "assigned_day": "1",
+        "rep_count": "8",
+        "set_count": "3",
+        "workout_id": "1"
+    }
+]
