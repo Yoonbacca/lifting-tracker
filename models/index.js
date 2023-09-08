@@ -1,32 +1,47 @@
-const User = require('./User');
-const Post = require('./Post');
-const Comment = require('./Comment');
+const Workout = require("./Workout");
+const sequelize = require("../config/connection");
 
-User.hasMany(Post, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
+class Workout extends Model {}
 
-Post.belongsTo(User, {
-  foreignKey: 'user_id',
-});
+Workout.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    length_days: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "workout",
+  }
+);
 
-Post.hasMany(Comment, {
-  foreignKey: 'post_id',
-  onDelete: 'CASCADE',
-});
-
-Comment.belongsTo(Post, {
-  foreignKey: 'post_id',
-});
-
-User.hasMany(Comment, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
-
-Comment.belongsTo(User, {
-  foreignKey: 'user_id',
-});
-
-module.exports = { User, Post, Comment };
+module.exports = { Workout };
