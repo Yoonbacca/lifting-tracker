@@ -3,18 +3,18 @@
     "title": "Push Pull Leg",
     "description": "A three day split",
     "length_days": 3,
-    "user_id": 1,
+    "user_id": 1
   },
   {
     "title": "Calisthenics",
     "description": "A three day body weight workout",
     "length_days": 3,
-    "user_id": 2,
+    "user_id": 2
   },
   {
     "title": "Full Body",
     "description": "A two day workout for people who are busy",
     "length_days": 2,
-    "user_id": 3,
-  },
+    "user_id": 3
+  }
 ]
