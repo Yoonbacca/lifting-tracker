@@ -1,0 +1,20 @@
+[
+    {
+      "first_name": "Timmy",
+      "last_name": "Trainer",
+      "user info": "A trainer to approve workout routines",
+      "user_id": 1
+    },
+    {
+        "first_name": "Sally",
+        "last_name": "Squats",
+      "user info": "Leg day or no day baby!",
+      "user_id": 2
+    },
+    {
+      "first_name": "Billy",
+      "last_name": "Biceps",
+      "user info": "I skip legs so I can get two arm days in!",
+      "user_id": 3
+    }
+  ]
