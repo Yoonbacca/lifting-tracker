@@ -1,0 +1,20 @@
+[
+    {
+      "title": "Timmy Trainer",
+      "description": "A trainer to approve workout routines",
+      
+      "user_id": 1
+    },
+    {
+      "title": "Sally Squats",
+      "description": "Leg day or no day baby!",
+      
+      "user_id": 2
+    },
+    {
+      "title": "Billy Biceps",
+      "description": "I skip legs so I can get two arm days in!",
+      "length_days": 2,
+      "user_id": 3
+    }
+  ]
