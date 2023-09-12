@@ -1,12 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt')
 
-class Exercise extends Model {}
+class Users extends Model {}
 
 Exercise.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTERGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
@@ -16,19 +17,16 @@ Exercise.init(
       allowNull: false,
     },
     last_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    user_info: {
-      type: DataTypes.INTEGER,
+    email: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    username: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'users',
-        key: 'id',
-      },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
@@ -40,4 +38,4 @@ Exercise.init(
   }
 );
 
-module.exports = Exercise;
+module.exports = Users;
