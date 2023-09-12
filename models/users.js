@@ -11,23 +11,19 @@ Exercise.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    exercise_name: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    assigned_day: {
+    last_name: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    rep_count: {
+    user_info: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    set_count: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    workout_id: {
+    username: {
       type: DataTypes.INTEGER,
       references: {
         model: 'users',
