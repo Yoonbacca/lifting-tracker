@@ -2,22 +2,22 @@
   {
     "first_name": "Timmy",
     "last_name": "Trainer",
-    "user_info": "A trainer to approve workout routines",
-    "user_name": "ttrainer",
-    "password": "password"
+    "email": "timmytrains@gmail.com",
+    "password": "******",
+    "user_id": 1
   },
   {
     "first_name": "Sally",
     "last_name": "Squats",
-    "user_info": "Leg day or no day baby!",
-    "user_name": "ssquats",
-    "password": "password"
+    "email": "sallysquater@gmail.com",
+    "password": "******",
+    "user_id": 2
   },
   {
     "first_name": "Billy",
     "last_name": "Biceps",
-    "user_info": "I skip legs so I can get two arm days in!",
-    "user_name": "bbiceps",
-    "password": "password"
+    "email": "billybiceps@gmail.com",
+    "password": "******",
+    "user_id": 3
   }
 ]
