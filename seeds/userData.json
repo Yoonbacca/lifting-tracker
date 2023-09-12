@@ -1,23 +1,23 @@
 [
-    {
-      "first_name": "Timmy",
-      "last_name": "Trainer",
-      "email": "timmytrains@gmail.com",
-      "password": "******",
-      "user_id": 1
-    },
-    {
-        "first_name": "Sally",
-        "last_name": "Squats",
-      "email": "sallysquater@gmail.com",
-      "password":"******",
-      "user_id": 2
-    },
-    {
-      "first_name": "Billy",
-      "last_name": "Biceps",
-      "email": "billybiceps@gmail.com",
-      "password":"******",
-      "user_id": 3
-    }
-  ]
+  {
+    "first_name": "Timmy",
+    "last_name": "Trainer",
+    "email": "timmytrains@gmail.com",
+    "password": "******",
+    "user_id": 1
+  },
+  {
+    "first_name": "Sally",
+    "last_name": "Squats",
+    "email": "sallysquater@gmail.com",
+    "password": "******",
+    "user_id": 2
+  },
+  {
+    "first_name": "Billy",
+    "last_name": "Biceps",
+    "email": "billybiceps@gmail.com",
+    "password": "******",
+    "user_id": 3
+  }
+]
