@@ -1,7 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const bcrypt = require('bcryptjs');
-const User = require('../models/user.js'); // You should define your User model
+const router = require('express').Router();
+
+const { User } = require('../../models'); // You should define your User model
 
 // User registration route
 router.post('/register', async (req, res) => {
