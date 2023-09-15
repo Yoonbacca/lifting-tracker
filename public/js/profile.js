@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
 
     console.log(title, description, length_days);
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/exercise");
     } else {
       alert("Failed to create workout");
     }
@@ -27,14 +27,15 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/workouts/${id}`, {
       method: "DELETE",
     });
 
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert("Failed to delete project");
+      console.log(response)
+      alert("Failed to delete workout");
     }
   }
 };
@@ -44,5 +45,5 @@ document
   .addEventListener("submit", newFormHandler);
 
 document
-  .querySelector(".project-list")
+  .querySelector(".workout-list")
   .addEventListener("click", delButtonHandler);

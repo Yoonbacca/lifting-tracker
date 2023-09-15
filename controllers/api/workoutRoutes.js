@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Workout } = require("../../models");
+const { Workout, Exercise } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.post("/", async (req, res) => {
@@ -46,6 +46,24 @@ router.delete("/:id", async (req, res) => {
     res.status(200).json(workoutData);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.post("/:id/exercise", async (req, res) => {
+  console.log("TEST");
+  const userId = req.session.user_id;
+  const workoutId = req.params.id;
+  try {
+    const newExercise = await Exercise.create({
+      ...req.body,
+      user_id: userId,
+      workout_id: workoutId
+    });
+
+    res.status(200).json(newExercise);
+  } catch (err) {
+    console.log('line 62', err)
+    res.status(400).json(err);
   }
 });
 
