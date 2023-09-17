@@ -9,15 +9,14 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["first_name", "last_name"],
         },
       ],
     });
 
     // Serialize data so the template can read it
     const workouts = workoutData.map((workout) => workout.get({ plain: true }));
-
     // Pass serialized data and session flag into template
+    console.log(workouts);
     res.render("homepage", {
       workouts,
       logged_in: req.session.logged_in,
@@ -33,10 +32,7 @@ router.get("/workout/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["first_name", "last_name"],
         },
-      ],
-      include: [
         {
           model: Exercise,
         },
@@ -44,6 +40,7 @@ router.get("/workout/:id", async (req, res) => {
     });
 
     const workout = workoutData.get({ plain: true });
+    console.log(workout);
 
     res.render("workout", {
       ...workout,
@@ -98,8 +95,7 @@ router.get("/workout/:id/exercise", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-
-})
+});
 
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
