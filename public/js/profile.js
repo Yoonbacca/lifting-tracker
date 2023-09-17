@@ -3,10 +3,14 @@ const newFormHandler = async (event) => {
 
   const title = document.querySelector("#workout-name").value.trim();
   const description = document.querySelector("#workout-desc").value.trim();
-  const length_days = document.querySelector("#length-days").value.trim();
+  const lengthDaysSelect = document.querySelector("#length-days");
+  const length_days = lengthDaysSelect.options[lengthDaysSelect.selectedIndex].value;
 
-  if (title && description && length_days) {
-    const response = await fetch(`/api/workouts`, {
+  console.log(length_days);
+
+  if (!title || !description || !length_days) {
+    alert('Please enter a title, description, and number of days for your workout')
+  }else {const response = await fetch(`/api/workouts`, {
       method: "POST",
       body: JSON.stringify({ title, description, length_days }),
       headers: {
@@ -14,36 +18,36 @@ const newFormHandler = async (event) => {
       },
     });
 
-    console.log(title, description, length_days);
     if (response.ok) {
-      document.location.replace("/exercise");
+      const responseData = await response.json();
+      const newWorkoutId = responseData.id;
+      document.location.href = `/workout/${newWorkoutId}`;
     } else {
       alert("Failed to create workout");
     }
   }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+// const delButtonHandler = async (event) => {
+//   if (event.target.hasAttribute("data-id")) {
+//     const id = event.target.getAttribute("data-id");
 
-    const response = await fetch(`/api/workouts/${id}`, {
-      method: "DELETE",
-    });
+//     const response = await fetch(`/api/workouts/${id}`, {
+//       method: "DELETE",
+//     });
 
-    if (response.ok) {
-      document.location.replace("/profile");
-    } else {
-      console.log(response)
-      alert("Failed to delete workout");
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace("/profile");
+//     } else {
+//       console.log(response)
+//       alert("Failed to delete workout");
+//     }
+//   }
 
 document
   .querySelector(".new-workout-form")
   .addEventListener("submit", newFormHandler);
 
-document
-  .querySelector(".workout-list")
-  .addEventListener("click", delButtonHandler);
+// document
+//   .querySelector(".workout-list")
+//   .addEventListener("click", delButtonHandler);
