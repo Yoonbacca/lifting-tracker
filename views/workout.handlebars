@@ -13,13 +13,15 @@
       {{user.last_name}}
       on
       {{format_date date_created}}</p>
-
+    {{#if logged_in}}
+      <button class="btn btn-primary add-exercise">Add an exercise</button>
+    {{/if}}
   </div>
 
-  {{!-- {{#if exercises.length}} --}}
   <div class="col-md-6 exercise-list">
     <h3>Current exercises:</h3>
 
+{{#if exercises.length}}
     {{#each exercises as |exercise|}}
       <div class="row mb-2">
         <div class="col-md-8">
@@ -35,5 +37,9 @@
       </div>
     {{/each}}
   </div>
-  {{!-- {{/if}} --}}
+  {{else}}
+  None
+  {{/if}}
 </div>
+
+<script src="/js/workout.js"></script>

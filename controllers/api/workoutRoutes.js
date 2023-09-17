@@ -57,12 +57,10 @@ router.post("/:id/exercise", async (req, res) => {
     const newExercise = await Exercise.create({
       ...req.body,
       user_id: userId,
-      workout_id: workoutId
+      workout_id: workoutId,
     });
-
     res.status(200).json(newExercise);
   } catch (err) {
-    console.log('line 62', err)
     res.status(400).json(err);
   }
 });
