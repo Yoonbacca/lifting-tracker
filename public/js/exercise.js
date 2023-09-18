@@ -1,16 +1,11 @@
+let url = window.location.href;
+const match = url.match(/\/(\d+)\/exercise$/);
+const workoutId = parseInt(match[1], 10);
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
   // Get the current URL
-  var url = window.location.href;
-  // Use a regular expression to match and extract the number after the last "/"
-  var match = url.match(/\/(\d+)\/exercise$/);
-  if (match) {
-    // Extracted number is in match[1]
-    var workoutId = parseInt(match[1], 10);
-  } else {
-    console.log("Number not found in the URL");
-  }
 
   const exercise_name = document.querySelector("#exercise-name").value.trim();
   const rep_count = document.querySelector("#exercise-rep").value.trim();
@@ -60,6 +55,45 @@ const delButtonHandler = async (event) => {
     }
   }
 };
+
+const populateDays = async (workoutId) => {
+  const select = document.getElementById("assigned-days");
+  try {
+    // Fetch numDays from the API using the specified workoutId
+    const response = await fetch(`/api/workouts/${workoutId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch numDays from the API");
+    }
+
+    const data = await response.json();
+    console.log(data.length_days);
+    // Assuming the API response contains numDays
+
+    // Clear any existing options
+    select.innerHTML = "";
+
+    // Create and add new options based on the specified number of days
+    for (let i = 1; i <= data.length_days; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = `Day ${i}`;
+      select.appendChild(option);
+    }
+  } catch (error) {
+    console.error(error);
+    // Handle any errors, such as network issues or API failures
+  }
+};
+
+// Example usage:
+console.log(workoutId);
+populateDays(workoutId);
 
 document
   .querySelector(".new-exercise-form")
