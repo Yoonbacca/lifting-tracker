@@ -36,7 +36,7 @@ You can demo this project by following the deployed heroku link. Another option 
 
 ## Usage
 
-This project can be used by anyone looking to streamline their README creation process.
+This project can be used by anyone looking to streamline their workouts.
 
 ## Credits
 
