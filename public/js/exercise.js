@@ -72,7 +72,7 @@ const populateDays = async (workoutId) => {
     }
 
     const data = await response.json();
-    console.log(data.length_days);
+    console.log("******", data.length_days);
     // Assuming the API response contains numDays
 
     // Clear any existing options
@@ -94,6 +94,7 @@ const populateDays = async (workoutId) => {
 // Example usage:
 console.log(workoutId);
 populateDays(workoutId);
+console.log(123);
 
 document
   .querySelector(".new-exercise-form")

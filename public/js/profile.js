@@ -32,26 +32,29 @@ const newFormHandler = async (event) => {
   }
 };
 
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute("data-id")) {
-//     const id = event.target.getAttribute("data-id");
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
 
-//     const response = await fetch(`/api/workouts/${id}`, {
-//       method: "DELETE",
-//     });
+    const response = await fetch(`/api/workouts/${id}`, {
+      method: "DELETE",
+    });
 
-//     if (response.ok) {
-//       document.location.replace("/profile");
-//     } else {
-//       console.log(response)
-//       alert("Failed to delete workout");
-//     }
-//   }
+    if (response.ok) {
+      document.location.replace("/profile");
+    } else {
+      console.log(response);
+      alert("Failed to delete workout");
+    }
+  }
+};
+
+const delButtons = document.querySelectorAll(".delete-workout");
+
+delButtons.forEach((button) => {
+  button.addEventListener("click", delButtonHandler);
+});
 
 document
   .querySelector(".new-workout-form")
   .addEventListener("submit", newFormHandler);
-
-// document
-//   .querySelector(".workout-list")
-//   .addEventListener("click", delButtonHandler);
