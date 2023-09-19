@@ -1,0 +1,34 @@
+ body{
+  min-height: 500px !important
+ }
+ footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f0f0f0; /* Adjust background color as needed */
+  text-align: center; /* Center-align the content inside the footer */
+  padding: 10px 0; /* Add padding as needed */
+}
+
+form {
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    border: 4px solid hsl(0, 0%, 90%);
+  }
+
+  .custom-size{
+    width: 40%
+  }
+  
+  .m1 {
+    margin: 10px 0 50px 0
+  }
+  .text-align-c {
+    text-align: center;
+  }
+
+  .svg {
+    width: 50px;
+  }

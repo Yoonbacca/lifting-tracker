@@ -40,8 +40,7 @@ router.get("/workout/:id", async (req, res) => {
     });
 
     const workout = workoutData.get({ plain: true });
-
-    res.render("workout", {
+    res.render("workout", { showBackToTopButton: true,
       ...workout,
       logged_in: req.session.logged_in,
     });
