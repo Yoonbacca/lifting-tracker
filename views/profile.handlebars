@@ -11,11 +11,20 @@
     <form class="form new-workout-form">
       <div class="form-group">
         <label for="workout-name">Workout Name:</label>
-        <input class="form-input" type="text" id="workout-name" name="workout-name" />
+        <input
+          class="form-input"
+          type="text"
+          id="workout-name"
+          name="workout-name"
+        />
       </div>
       <div class="form-group">
         <label for="workout-desc">description:</label>
-        <textarea class="form-input" id="workout-desc" name="workout-desc"></textarea>
+        <textarea
+          class="form-input"
+          id="workout-desc"
+          name="workout-desc"
+        ></textarea>
       </div>
       <div>
         <label for="length-days">Length of Days</label>
@@ -36,21 +45,23 @@
   </div>
 
   {{#if workouts.length}}
-  <div class="col-md-6 workout-list">
-    <h3>Current Workouts:</h3>
+    <div class="col-md-6 workout-list">
+      <h3>Current Workouts:</h3>
 
-    {{#each workouts as |workout|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/workout/{{workout.id}}">{{workout.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-success" data-id="{{workout.id}}">EDIT</button>
-        <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">DELETE</button>
-      </div>
+      {{#each workouts as |workout|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/workout/{{workout.id}}">{{workout.title}}</a></h4>
+          </div>
+          <div class="col-md-4">
+            <button
+              class="btn btn-sm btn-danger delete-workout"
+              data-id="{{workout.id}}"
+            >DELETE</button>
+          </div>
+        </div>
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
   {{/if}}
 </div>
 <script src="/js/profile.js"></script>
