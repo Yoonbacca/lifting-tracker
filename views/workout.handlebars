@@ -41,5 +41,23 @@
   None
   {{/if}}
 </div>
+{{#ge exercises.length 5}}
+<div class="elevator-button text-align-c m1"><img class='svg' src="/assets/image/up-arrow-svgrepo-com.svg" alt=""></div>
+  {{/ge}}
 
 <script src="/js/workout.js"></script>
+
+<script src="/js/elevator.js"></script>
+<script src="/js/elevatorcall.js"></script>
+
+<script>
+  window.onload = function () {
+    var elevator = new Elevator({
+      element: document.querySelector('.elevator-button'),
+      duration: 5000,
+      mainAudio: mainAudio.src,
+      endAudio: endAudio.src,
+    });
+
+  }
+</script>

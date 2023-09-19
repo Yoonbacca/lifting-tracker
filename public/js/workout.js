@@ -3,7 +3,6 @@ const addButtonHandler = async (event) => {
   const urlSegments = currentURL.split("/");
   // Get the last segment (which should be the workout ID)
   const id = urlSegments[urlSegments.length - 1];
-  console.log(window.sessionStorage);
   document.location.replace(`/workout/${id}/exercise`);
 };
 
