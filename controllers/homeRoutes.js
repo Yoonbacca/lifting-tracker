@@ -40,7 +40,6 @@ router.get("/workout/:id", async (req, res) => {
     });
 
     const workout = workoutData.get({ plain: true });
-    console.log(workout);
 
     res.render("workout", {
       ...workout,
