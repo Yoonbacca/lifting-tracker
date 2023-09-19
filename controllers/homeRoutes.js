@@ -40,7 +40,8 @@ router.get("/workout/:id", async (req, res) => {
     });
 
     const workout = workoutData.get({ plain: true });
-    res.render("workout", { showBackToTopButton: true,
+    res.render("workout", {
+      showBackToTopButton: true,
       ...workout,
       logged_in: req.session.logged_in,
     });
@@ -69,7 +70,7 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
-router.get("/workout/:id/exercise", async (req, res) => {
+router.get("/workout/:id/exercise", withAuth, async (req, res) => {
   try {
     const exerciseData = await Workout.findByPk(req.params.id, {
       include: [
